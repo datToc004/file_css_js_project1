@@ -1,0 +1,17 @@
+{
+  "name": "demo-bower",
+  "version": "1.0.1",
+  "authors": [
+    "DatDo <datdo200499@gmail.com>"
+  ],
+  "description": "Framgia standard ",
+  "main": "/",
+  "keywords": [
+    "fonticons"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/datToc004/file_css_js_project1.git",
+  "ignore": [
+    "README.md"
+  ]
+}

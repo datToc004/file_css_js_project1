@@ -34,7 +34,7 @@ function del_cart(name) {
 }
 
 function update_qty(rowId, qty) {
-    $.get('/update-cart-dish/' + rowId + '/' + qty,
+    $.get('home/reservation/update-cart-dish/' + rowId + '/' + qty,
         function () {
             window.location.reload();
         }
@@ -42,14 +42,12 @@ function update_qty(rowId, qty) {
 }
 
 $("#addRow").click(function () {
+    var html1 = $('#table').html();
     var html = '';
     html += `<div id="inputFormRow">
                      <div class="input-group mb-3">
                         <select name="tables[][id]" class="form-control">
-                            @foreach ($tables as $table)
-                                <option value="{{ $table->id }}">{{ $table->name }}
-                                </option>
-                            @endforeach
+                            ${html1}
                         </select>
                         <div class="input-group-append">
                         <button id="removeRow" type="button"
@@ -67,15 +65,13 @@ $(document).on('click', '#removeRow', function () {
 
 var x = 0;
 $("#addRow1").click(function () {
+    var html1 = $('#dishes').html();
     var html = '';
     x++;
     html += `<div id="inputFormRow1">
                     <div class="input-group mb-3">
                         <select name="dishes[${x}][id]" class="form-control">
-                            @foreach ($dishes as $dish)
-                                <option value="{{ $dish->id }}">{{ $dish->name }}
-                                </option>
-                            @endforeach
+                            ${html1}
                         </select>
                         <input type="number" name="dishes[${x}][qty]" class="form-control">
                         <input type="hidden" name="dishes[${x}][price]" class="form-control" value="{{ $dish->price }}">

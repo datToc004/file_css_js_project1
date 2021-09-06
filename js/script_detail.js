@@ -34,7 +34,7 @@ function del_cart(name) {
 }
 
 function update_qty(rowId, qty) {
-    $.get('home/reservation/update-cart-dish/' + rowId + '/' + qty,
+    $.get('/home/reservation/update-cart-dish/' + rowId + '/' + qty,
         function () {
             window.location.reload();
         }
